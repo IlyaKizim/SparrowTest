@@ -28,6 +28,7 @@ struct ShowView: View {
                     Button(action: {
                         withAnimation {
                             isPressed[i].toggle()
+                            action(-1)
                             Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { _ in
                                isPressed[i].toggle()
                                 action(i)

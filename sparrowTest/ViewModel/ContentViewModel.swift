@@ -90,6 +90,7 @@ class ContentViewModel: ObservableObject {
     // MARK: - AppendingViewInArray
     
     func createViewArray(pressedView: Int) {
+    
         let constantPosition = CGPoint(x: currentXPosition / 2 - 20, y: 40)
         var view: RectangleInfo?
         switch pressedView {
