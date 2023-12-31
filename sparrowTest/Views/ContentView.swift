@@ -149,6 +149,7 @@ struct RectanglesOverlay: View {
                         .position(viewModel.position[index] ? CGPoint(x: viewModel.currentXPosition / 2 - 20, y: 40) : rectangleInfo.position)
                         .opacity(viewModel.position[index] ? 1 : 0.6)
                         .zIndex(viewModel.position[index] ? 3 : 1)
+                        .disabled(viewModel.buttonIsDisabled)
                 }
             }
         }
@@ -201,7 +202,12 @@ struct RectanglesOverlay: View {
                 .onChanged { value in
                     if viewModel.isLongPressActive {
                         viewModel.checkPossibleFrame(value: value)
+                        viewModel.buttonIsDisabled = true
                     }
+                    
+                }
+                .onEnded{ value in
+                    viewModel.buttonIsDisabled = false
                 }
         )
         .offset(y: -80)

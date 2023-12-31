@@ -10,7 +10,6 @@ import SwiftUI
 struct ShowView: View {
     
     // MARK: - Properties
-    
     var action: (Int) -> ()
     let theme: Theme
     @State var isPressed: [Bool] = [false, false, false, false, false, false]
@@ -50,7 +49,7 @@ struct ShowView: View {
                     .background(LinearGradient(colors: themeButtonModel.gradientColors, startPoint: .topLeading, endPoint: .bottomTrailing))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .offset(x: isPressed[i] ? 0 : CGFloat.calculateOffset(for: i, proxy: proxy))
-                    .padding( .top, isPressed[i] ? 0 : 5)
+                    .padding(.top, isPressed[i] ? 0 : 5)
                 }
             }
             .overlay(

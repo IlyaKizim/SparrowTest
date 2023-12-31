@@ -21,6 +21,7 @@ class ContentViewModel: ObservableObject {
     @Published var index = -1
     @Published var stackIsEmpty = true
     @Published var isLongPressActive = false
+    @Published var buttonIsDisabled = false
     
     // MARK: - PropertiesIpad
     
